@@ -1,0 +1,102 @@
+.center-items{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.style-register{
+    margin-bottom: 2em;
+    
+}
+
+ .social-area {
+    text-align: center;
+    padding-top: 14px
+}
+ .social-area .title {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline-block;
+    color: #007bff;
+    position: relative
+}
+ .social-area .text {
+    font-size: 17px;
+    font-weight: 400;
+    color: #143250
+}
+ .social-area .title::before {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: rgba(0, 0, 0, .2);
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 100%;
+    margin-left: 7px
+}
+ .social-area .title::after {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: rgba(0, 0, 0, .2);
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 100%;
+    margin-right: 7px
+}
+ ul.social-links {
+    padding: 0;
+    margin: 0
+}
+ .social-area .social-links li {
+    display: inline-block
+}
+ .social-area .social-links li a i {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    display: inline-block;
+    color: #fff;
+    margin: 0 5px;
+    -webkit-box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+    box-shadow: 0 5px 10px rgb(0 0 0 / 15%)
+}
+ .social-area .social-links li a i.fa-facebook-f {
+    background: #0069f7
+}
+ .social-area .social-links li a i.fa-google-plus-g {
+    background: #d1062c
+}
+ .nav-tabs .nav-link.active {
+    background: #007bff;
+    color: #fff;
+}
+ .nav-tabs .nav-link {
+    background: #e3f2fd;
+}
+ .nav-tabs .nav-link {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 0;
+    color: #000;
+}
+ .nav-tabs li.nav-item {
+    width: 50%;
+}
+ .card-body {
+    padding: 0px
+}
+ .card-body .tab-content {
+    padding: 0 1.25rem 1.75em
+}
+#myTab li a{cursor: pointer;}
