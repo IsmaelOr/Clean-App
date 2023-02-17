@@ -7,6 +7,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class AuthService {
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
     public router: Router,
-    public ngZone: NgZone
+    public snackBar: MatSnackBar,
   ) { 
     this.afAuth.authState.subscribe((user) => {
       if(user){
@@ -37,14 +38,16 @@ export class AuthService {
     const infoUsuario = await this.afAuth.signInWithEmailAndPassword(email, password).then((usuarioFirebase) => {
       return usuarioFirebase;
     }).catch((error) => window.alert(error.message));
-
+    
     console.log(infoUsuario);
   }
 
   async SignUp(email: string, password: string, rol: string){
     const infoUsuario: any = await this.afAuth.createUserWithEmailAndPassword(email, password).then((usuarioFirebase) => {
       return usuarioFirebase;
-    }).catch((error) => window.alert(error.message));
+    }).catch((error) => this.snackBar.open(error, '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 }));
+
+    this.snackBar.open('User create successfully', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
 
     console.log(infoUsuario.user.uid);
   
@@ -60,6 +63,7 @@ export class AuthService {
   async SignOut(){
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem("user");
+      this.snackBar.open('Sesión Cerrada', '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 })
       this.router.navigate(["login"]);
     })
   }

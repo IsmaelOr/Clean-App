@@ -24,6 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 // **** FIREBASE MODULES ****
 import { AngularFireModule } from '@angular/fire/compat';
@@ -72,6 +75,9 @@ import { CleanerViewComponent } from './views/cleaner-view/cleaner-view.componen
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
+    MatSnackBarModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],
