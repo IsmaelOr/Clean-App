@@ -54,7 +54,7 @@ export class AuthService {
       rol: rol
     }
     docRef.set(userInfo);
-    //this.router.navigate(["home"]);
+    this.router.navigate(["home"]);
   }
 
   async SignOut(){
