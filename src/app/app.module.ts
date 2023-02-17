@@ -23,6 +23,18 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+// **** FIREBASE MODULES ****
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'src/environments/environment';
+import { AdminViewComponent } from './views/admin-view/admin-view.component';
+import { UserViewComponent } from './views/user-view/user-view.component';
+import { CleanerViewComponent } from './views/cleaner-view/cleaner-view.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +42,10 @@ import { SignupComponent } from './pages/signup/signup.component';
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AdminViewComponent,
+    UserViewComponent,
+    CleanerViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,9 +65,15 @@ import { SignupComponent } from './pages/signup/signup.component';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

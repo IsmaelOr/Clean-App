@@ -41,8 +41,7 @@
           </li>
       </ul>
       <!-- Left links -->
-
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center" *ngIf="authService.userData == 'null'; else elseBlock">
         <button type="button" class="btn btn-link px-3 me-2" routerLink="/login">Login</button>
         <button type="button" class="btn btn-primary me-3" routerLink="/signup">
           Sign up for free
@@ -54,6 +53,11 @@
             ><i class="fab fa-github"></i
           ></a> -->
       </div>
+      <ng-template #elseBlock>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-primary me-3" (click)="authService.SignOut()">Log Out</button>
+        </div>
+      </ng-template>
     </div>
     <!-- Collapsible wrapper -->
   </div>

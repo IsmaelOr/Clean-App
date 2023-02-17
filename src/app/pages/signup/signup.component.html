@@ -29,40 +29,46 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
                         <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">User Register</h4>
-                        <form>
+                        <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit(registerForm.value)">
                             <!-- 2 column grid layout with text inputs for the first and last names -->
                             <div class="row">
                               <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                  <input type="text" id="form3Example1" class="form-control" />
-                                  <label class="form-label" for="form3Example1">First name</label>
+                                  <input type="text" id="userName" class="form-control" formControlName="name" #userName/>
+                                  <label class="form-label" for="userName">First name</label>
                                 </div>
                               </div>
                               <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                  <input type="text" id="form3Example2" class="form-control" />
-                                  <label class="form-label" for="form3Example2">Last name</label>
+                                  <input type="text" id="userLastName" class="form-control" #userLastName/>
+                                  <label class="form-label" for="userLastName">Last name</label>
                                 </div>
                               </div>
                             </div>
             
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                              <input type="email" id="form3Example3" class="form-control" />
-                              <label class="form-label" for="form3Example3">Email address</label>
+                              <input type="email" id="userEmail" class="form-control" formControlName="email" #userEmail/>
+                              <label class="form-label" for="userEmail">Email address</label>
                             </div>
             
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                              <input type="password" id="form3Example4" class="form-control" />
-                              <label class="form-label" for="form3Example4">Password</label>
+                              <input type="password" id="userPassword" class="form-control" formControlName="password" #userPassword/>
+                              <label class="form-label" for="userPassword">Password</label>
+                            </div>
+
+                            <!-- Confirm Password input -->
+                            <div class="form-outline mb-4">
+                              <input type="password" id="userConfirmPassword" class="form-control" formControlName="confirmPassword" #userConfirmPassword/>
+                              <label class="form-label" for="userConfirmPassword">Confirm Password</label>
                             </div>
             
                             <!-- Checkbox -->
                             <div class="form-check d-flex justify-content-center mb-4">
-                              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                              <label class="form-check-label" for="form2Example33">
-                                Subscribe to our newsletter
+                              <input class="form-check-input me-2" type="checkbox" value="" id="userTerms" #userTerms/>
+                              <label class="form-check-label" for="userTerms">
+                                  Accept terms and conditions for user
                               </label>
                             </div>
             
@@ -96,40 +102,46 @@
                     </div>
                     <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
                         <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Cleaner Register</h4>
-                        <form>
+                        <form [formGroup]="registerCleanerForm" (ngSubmit)="onRegisterFormSubmit(registerCleanerForm.value)">
                             <!-- 2 column grid layout with text inputs for the first and last names -->
                             <div class="row">
                               <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                  <input type="text" id="form3Example1" class="form-control" />
-                                  <label class="form-label" for="form3Example1">First name</label>
+                                  <input type="text" id="cleanerName" class="form-control" formControlName="name" #cleanerName/>
+                                  <label class="form-label" for="cleanerName">First name</label>
                                 </div>
                               </div>
                               <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                  <input type="text" id="form3Example2" class="form-control" />
-                                  <label class="form-label" for="form3Example2">Last name</label>
+                                  <input type="text" id="cleanerLastName" class="form-control" #cleanerLastName/>
+                                  <label class="form-label" for="cleanerLastName">Last name</label>
                                 </div>
                               </div>
                             </div>
             
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                              <input type="email" id="form3Example3" class="form-control" />
-                              <label class="form-label" for="form3Example3">Email address</label>
+                              <input type="email" id="cleanerEmail" class="form-control" formControlName="email" #cleanerEmail/>
+                              <label class="form-label" for="cleanerEmail">Email address</label>
                             </div>
             
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                              <input type="password" id="form3Example4" class="form-control" />
-                              <label class="form-label" for="form3Example4">Password</label>
+                              <input type="password" id="cleanerPassword" class="form-control" formControlName="password" #cleanerPassword/>
+                              <label class="form-label" for="cleanerPassword">Password</label>
+                            </div>
+
+                            <!-- Confirm Password input -->
+                            <div class="form-outline mb-4">
+                              <input type="password" id="cleanerConfirmPassword" class="form-control" formControlName="confirmPassword" #cleanerConfirmPassword/>
+                              <label class="form-label" for="cleanerConfirmPassword">Confirm Password</label>
                             </div>
             
                             <!-- Checkbox -->
                             <div class="form-check d-flex justify-content-center mb-4">
-                              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                              <label class="form-check-label" for="form2Example33">
-                                Subscribe to our newsletter
+                              <input class="form-check-input me-2" type="checkbox" value="" id="cleanerTerms" #cleanerTerms/>
+                              <label class="form-check-label" for="cleanerTerms">
+                                Accept terms and conditions for cleaner
                               </label>
                             </div>
             
