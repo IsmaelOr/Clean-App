@@ -35,29 +35,31 @@ export class AuthService {
   }
 
   async SignIn(email: string, password: string){
-    const infoUsuario = await this.afAuth.signInWithEmailAndPassword(email, password).then((usuarioFirebase) => {
+    const infoUsuario: any = await this.afAuth.signInWithEmailAndPassword(email, password).then((usuarioFirebase) => {
+      this.snackBar.open('LogIn successfully', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
       return usuarioFirebase;
-    }).catch((error) => window.alert(error.message));
+    }).catch((error) => this.snackBar.open(error, '×', { panelClass: 'error', verticalPosition: 'top', duration: 5000 }));
     
-    console.log(infoUsuario);
+    if(infoUsuario.user.uid){
+      this.router.navigate(["home"]);
+    }
   }
 
   async SignUp(email: string, password: string, rol: string){
     const infoUsuario: any = await this.afAuth.createUserWithEmailAndPassword(email, password).then((usuarioFirebase) => {
+      this.snackBar.open('User create successfully', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
       return usuarioFirebase;
-    }).catch((error) => this.snackBar.open(error, '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 }));
+    }).catch((error) => this.snackBar.open(error, '×', { panelClass: 'error', verticalPosition: 'top', duration: 5000 }));
 
-    this.snackBar.open('User create successfully', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
-
-    console.log(infoUsuario.user.uid);
-  
-    const docRef = await this.afs.doc(`users/${infoUsuario.user.uid}`);
-    const userInfo = {
-      email: email,
-      rol: rol
+    if(infoUsuario.user.uid){
+      const docRef = await this.afs.doc(`users/${infoUsuario.user.uid}`);
+      const userInfo = {
+        email: email,
+        rol: rol
+      }
+      docRef.set(userInfo);
+      this.router.navigate(["home"]);
     }
-    docRef.set(userInfo);
-    this.router.navigate(["home"]);
   }
 
   async SignOut(){

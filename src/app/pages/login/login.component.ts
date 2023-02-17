@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public onLoginFormSubmit(values: Object): void{
+  public onLoginFormSubmit(values: any): void{
     if(this.loginForm.valid){
-      
+      this.authService.SignIn(values.email, values.password)
     }
   }
 
