@@ -33,40 +33,40 @@
                             <!-- 2 column grid layout with text inputs for the first and last names -->
                             <div class="row">
                               <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                  <input type="text" id="userName" class="form-control" formControlName="name" #userName/>
-                                  <label class="form-label" for="userName">First name</label>
+                                <div class="">
+                                  <label for="userName" class="text-primary">First name</label>
+                                  <input type="text" id="userName" class="form-control" formControlName="name" #userName placeholder="Enter your name" required/>
                                 </div>
                               </div>
                               <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                  <input type="text" id="userLastName" class="form-control" #userLastName/>
-                                  <label class="form-label" for="userLastName">Last name</label>
+                                <div class="">
+                                  <label class="text-primary" for="userLastName">Last name</label>
+                                  <input type="text" id="userLastName" class="form-control" #userLastName placeholder="Enter your Last Name" required/>
                                 </div>
                               </div>
                             </div>
             
                             <!-- Email input -->
-                            <div class="form-outline mb-4">
-                              <input type="email" id="userEmail" class="form-control" formControlName="email" #userEmail/>
-                              <label class="form-label" for="userEmail">Email address</label>
+                            <div class="mb-4">
+                              <label class="text-primary" for="userEmail">Email address</label>
+                              <input type="email" id="userEmail" class="form-control" formControlName="email" #userEmail placeholder="Enter your email" required/>
                             </div>
             
                             <!-- Password input -->
-                            <div class="form-outline mb-4">
-                              <input type="password" id="userPassword" class="form-control" formControlName="password" #userPassword/>
-                              <label class="form-label" for="userPassword">Password</label>
+                            <div class="mb-4">
+                              <label class="text-primary" for="userPassword">Password</label>
+                              <input type="password" id="userPassword" class="form-control" formControlName="password" #userPassword placeholder="Enter your Password" required/>
                             </div>
 
                             <!-- Confirm Password input -->
-                            <div class="form-outline mb-4">
-                              <input type="password" id="userConfirmPassword" class="form-control" formControlName="confirmPassword" #userConfirmPassword/>
-                              <label class="form-label" for="userConfirmPassword">Confirm Password</label>
+                            <div class="mb-4">
+                              <label class="text-primary" for="userConfirmPassword">Confirm Password</label>
+                              <input type="password" id="userConfirmPassword" class="form-control" formControlName="confirmPassword" #userConfirmPassword placeholder="Confirm your Password" required/>
                             </div>
             
                             <!-- Checkbox -->
                             <div class="form-check d-flex justify-content-center mb-4">
-                              <input class="form-check-input me-2" type="checkbox" value="" id="userTerms" #userTerms/>
+                              <input class="form-check-input me-2" type="checkbox" value="" id="userTerms" #userTerms required/>
                               <label class="form-check-label" for="userTerms">
                                   Accept terms and conditions for user
                               </label>
@@ -106,35 +106,35 @@
                             <!-- 2 column grid layout with text inputs for the first and last names -->
                             <div class="row">
                               <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                  <input type="text" id="cleanerName" class="form-control" formControlName="name" #cleanerName/>
-                                  <label class="form-label" for="cleanerName">First name</label>
+                                <div class="">
+                                  <label class="text-primary" for="cleanerName">First name</label>
+                                  <input type="text" id="cleanerName" class="form-control" formControlName="name" #cleanerName placeholder="Enter your First Name"/>
                                 </div>
                               </div>
                               <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                  <input type="text" id="cleanerLastName" class="form-control" #cleanerLastName/>
-                                  <label class="form-label" for="cleanerLastName">Last name</label>
+                                <div class="">
+                                  <label class="text-primary" for="cleanerLastName">Last name</label>
+                                  <input type="text" id="cleanerLastName" class="form-control" #cleanerLastName placeholder="Enter your Last Name"/>
                                 </div>
                               </div>
                             </div>
             
                             <!-- Email input -->
-                            <div class="form-outline mb-4">
-                              <input type="email" id="cleanerEmail" class="form-control" formControlName="email" #cleanerEmail/>
-                              <label class="form-label" for="cleanerEmail">Email address</label>
+                            <div class="mb-4">
+                              <label class="text-primary" for="cleanerEmail">Email address</label>
+                              <input type="email" id="cleanerEmail" class="form-control" formControlName="email" #cleanerEmail placeholder="Enter your Email"/>
                             </div>
             
                             <!-- Password input -->
-                            <div class="form-outline mb-4">
-                              <input type="password" id="cleanerPassword" class="form-control" formControlName="password" #cleanerPassword/>
-                              <label class="form-label" for="cleanerPassword">Password</label>
+                            <div class="mb-4">
+                              <label class="text-primary" for="cleanerPassword">Password</label>
+                              <input type="password" id="cleanerPassword" class="form-control" formControlName="password" #cleanerPassword placeholder="Enter your Password"/>
                             </div>
 
                             <!-- Confirm Password input -->
-                            <div class="form-outline mb-4">
-                              <input type="password" id="cleanerConfirmPassword" class="form-control" formControlName="confirmPassword" #cleanerConfirmPassword/>
-                              <label class="form-label" for="cleanerConfirmPassword">Confirm Password</label>
+                            <div class="mb-4">
+                              <label class="text-primary" for="cleanerConfirmPassword">Confirm Password</label>
+                              <input type="password" id="cleanerConfirmPassword" class="form-control" formControlName="confirmPassword" #cleanerConfirmPassword placeholder="Confirm your Password"/>
                             </div>
             
                             <!-- Checkbox -->
