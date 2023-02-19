@@ -23,15 +23,31 @@ export class AuthService {
   ) { 
     this.afAuth.authState.subscribe((user) => {
       if(user){
-        this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user')!);
+        this.getRol(user.uid).then((rol) => {
+          this.userData = {
+            uid: user.uid,
+            email: user.email,
+            rol: rol
+          };
+          localStorage.setItem('user', JSON.stringify(this.userData));
+          JSON.parse(localStorage.getItem('user')!);
+        });
       }else{
         localStorage.setItem('user', 'null');
         JSON.parse(localStorage.getItem('user')!);
         this.userData = 'null';
       }
     })
+  }
+
+  async getRol(uid: string){
+    const userRef = this.afs.doc(`users/${uid}`);
+    const userInfoCifrada = await userRef.get();
+    var rol = '';
+    await userInfoCifrada.forEach((data:any) => {
+      rol = data.data().rol;
+    });
+    return rol;
   }
 
   async SignIn(email: string, password: string){

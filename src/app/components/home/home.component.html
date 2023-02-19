@@ -2,6 +2,7 @@
     <p>Home</p>
     <div *ngIf="authService.userData != 'null'">
         <p>Sesión Iniciada!</p>
-        {{authService.userData.uid}}
+        <p>{{authService.userData?.uid}}</p>
+        <p>Rol: {{authService.userData?.rol}}</p>
     </div>
 </div>
