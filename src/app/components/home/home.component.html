@@ -1,8 +1,6 @@
 <div>
     <p>Home</p>
-    <div *ngIf="authService.userData != 'null'">
-        <p>Sesión Iniciada!</p>
-        <p>{{authService.userData?.uid}}</p>
-        <p>Rol: {{authService.userData?.rol}}</p>
-    </div>
+    <app-admin-view *ngIf="authService.userData?.rol == 'admin'"></app-admin-view>
+    <app-user-view *ngIf="authService.userData?.rol == 'user'"></app-user-view>
+    <app-cleaner-view *ngIf="authService.userData?.rol == 'cleaner'"></app-cleaner-view>
 </div>
