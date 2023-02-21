@@ -82,19 +82,19 @@
                             <!-- Register buttons -->
                             <div class="text-center">
                               <p>or sign up with:</p>
-                              <button type="button" class="btn btn-link btn-floating mx-1">
+                              <button type="button" class="btn btn-link btn-floating mx-1" [disabled]="authService.isLoading">
                                 <i class="fab fa-facebook-f"></i>
                               </button>
             
-                              <button type="button" class="btn btn-link btn-floating mx-1" (click)="authService.GoogleAuth('user')">
+                              <button type="button" class="btn btn-link btn-floating mx-1" (click)="authService.GoogleAuth('user')" [disabled]="authService.isLoading">
                                 <i class="fab fa-google"></i>
                               </button>
             
-                              <button type="button" class="btn btn-link btn-floating mx-1">
+                              <button type="button" class="btn btn-link btn-floating mx-1" [disabled]="authService.isLoading">
                                 <i class="fab fa-twitter"></i>
                               </button>
             
-                              <button type="button" class="btn btn-link btn-floating mx-1">
+                              <button type="button" class="btn btn-link btn-floating mx-1" [disabled]="authService.isLoading">
                                 <i class="fab fa-github"></i>
                               </button>
                             </div>
@@ -155,19 +155,19 @@
                             <!-- Register buttons -->
                             <div class="text-center">
                               <p>or sign up with:</p>
-                              <button type="button" class="btn btn-link btn-floating mx-1">
+                              <button type="button" class="btn btn-link btn-floating mx-1" [disabled]="authService.isLoading">
                                 <i class="fab fa-facebook-f"></i>
                               </button>
             
-                              <button type="button" class="btn btn-link btn-floating mx-1" (click)="authService.GoogleAuth('cleaner')">
+                              <button type="button" class="btn btn-link btn-floating mx-1" (click)="authService.GoogleAuth('cleaner')" [disabled]="authService.isLoading">
                                 <i class="fab fa-google"></i>
                               </button>
             
-                              <button type="button" class="btn btn-link btn-floating mx-1">
+                              <button type="button" class="btn btn-link btn-floating mx-1" [disabled]="authService.isLoading">
                                 <i class="fab fa-twitter"></i>
                               </button>
             
-                              <button type="button" class="btn btn-link btn-floating mx-1">
+                              <button type="button" class="btn btn-link btn-floating mx-1" [disabled]="authService.isLoading">
                                 <i class="fab fa-github"></i>
                               </button>
                             </div>
