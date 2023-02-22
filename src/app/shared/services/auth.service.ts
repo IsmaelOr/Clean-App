@@ -111,7 +111,7 @@ export class AuthService {
     this.isLoading = true;
     const infoUsuario : any = await this.AuthLogin(new auth.GoogleAuthProvider());
     this.isLoading = false;
-    console.log(infoUsuario.user.uid);
+    //console.log(infoUsuario.user.uid);
     if(infoUsuario.user.uid){
       const userRef = this.afs.collection('users').doc(infoUsuario.user.uid);
       var UserExist = false;
@@ -121,6 +121,30 @@ export class AuthService {
         }
       });
       if(!UserExist){
+        const docRef = this.afs.doc(`users/${infoUsuario.user.uid}`);
+        const userInfo = {
+          email: infoUsuario.user.email,
+          rol: rol
+        }
+        docRef.set(userInfo);
+      }
+      this.router.navigate(["home"]);
+    }
+  }
+
+  async FacebookAuth(rol: string){
+    this.isLoading = true;
+    const infoUsuario : any = await this.AuthLogin(new auth.FacebookAuthProvider());
+    this.isLoading = false;
+    if(infoUsuario.user.uid){
+      const userRef = this.afs.collection('users').doc(infoUsuario.user.uid);
+      var userExist = false;
+      await userRef.get().forEach((data:any) => {
+        if(data.data()){
+          userExist = true;
+        }
+      });
+      if(!userExist){
         const docRef = this.afs.doc(`users/${infoUsuario.user.uid}`);
         const userInfo = {
           email: infoUsuario.user.email,

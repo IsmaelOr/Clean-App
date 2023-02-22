@@ -52,7 +52,7 @@
                   <!-- Register buttons -->
                   <div class="text-center">
                     <p>or login with:</p>
-                    <button type="button" class="btn btn-link btn-floating mx-1" [disabled]="authService.isLoading">
+                    <button type="button" class="btn btn-link btn-floating mx-1" (click)="authService.FacebookAuth('user')" [disabled]="authService.isLoading">
                       <i class="fab fa-facebook-f"></i>
                     </button>
   
